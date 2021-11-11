@@ -13,7 +13,7 @@ using namespace std;
 using namespace eosio;
 
 static constexpr name   CORE_TOKEN_ACCOUNT = name("eosio.token");
-static constexpr symbol CORE_TOKEN_SYMBOL  = symbol("WAX", 8);
+static constexpr symbol CORE_TOKEN_SYMBOL  = symbol("XPR", 8);
 
 CONTRACT atomicpacks : public contract {
 public:
@@ -33,7 +33,7 @@ public:
     ACTION retryrand(
         uint64_t pack_asset_id
     );
-    
+
 
     ACTION announcepack(
         name authorized_account,
