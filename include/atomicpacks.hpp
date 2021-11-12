@@ -1,13 +1,13 @@
 #pragma once
 
-#include "eosio/eosio.hpp"
-#include "eosio/asset.hpp"
-#include "eosio/crypto.hpp"
-#include "eosio/transaction.hpp"
+#include <eosio/eosio.hpp>
+#include <eosio/asset.hpp>
+#include <eosio/crypto.hpp>
+#include <eosio/transaction.hpp>
 
-#include "atomicassets-interface.hpp"
-#include "ram-interface.hpp"
-#include "wax-orng-interface.hpp"
+#include <atomicassets-interface.hpp>
+#include <ram-interface.hpp>
+#include <wax-orng-interface.hpp>
 
 using namespace std;
 using namespace eosio;

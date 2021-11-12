@@ -1,6 +1,6 @@
 #include <atomicpacks.hpp>
 
-#include "randomness_provider.cpp"
+#include <randomness_provider.cpp>
 
 
 /**
@@ -99,11 +99,11 @@ ACTION atomicpacks::claimunboxed(
 /**
 * This action is called by the rng oracle and provides the randomness for unboxing a pack
 * The assoc id is equal to the asset id of the pack that is being unboxed
-* 
+*
 * The unboxed assets are not immediately minted but instead placed in the unboxassets table with
 * the scope <asset id of the pack that is being unboxed> and need to be claimed using the claimunboxed action
 * This functionality is split in an effort to prevent transaction timeouts
-* 
+*
 * @required_auth rng oracle account
 */
 ACTION atomicpacks::receiverand(
@@ -198,7 +198,7 @@ void atomicpacks::receive_asset_transfer(
     auto packs_by_template_id = packs.get_index<name("templateid")>();
     auto pack_itr = packs_by_template_id.require_find(asset_itr->template_id,
         "The transferred asset's template does not belong to any pack");
-    
+
     check(pack_itr->unlock_time <= current_time_point().sec_since_epoch(),
         "The pack has not unlocked yet");
 
